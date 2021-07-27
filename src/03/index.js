@@ -7,12 +7,12 @@ const machine = createMachine({
   states: {
     inactive: {
       on: {
-        'mouse_down': 'active',
+        'mousedown': 'active',
       },
     },
     active: {
       on: {
-        'mouse_up': 'inactive',
+        'mouseup': 'inactive',
       },
     },
   },
@@ -28,6 +28,7 @@ service.onTransition(state => {
 
 elBox.addEventListener('mousedown', (event) => {
   service.send(event)
+  console.log(event);
   // service.send({
   //   type: 'mouse_down'
   // })
