@@ -27,13 +27,15 @@ service.onTransition(state => {
 })
 
 elBox.addEventListener('mousedown', (event) => {
-  service.send({
-    type: 'mouse_down'
-  })
+  service.send(event)
+  // service.send({
+  //   type: 'mouse_down'
+  // })
 });
 
 elBox.addEventListener('mouseup', (event) => {
-  service.send({
-    type: 'mouse_up'
-  })
+  service.send(event)
+  // service.send({
+  //   type: 'mouse_up'
+  // })
 });
