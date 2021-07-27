@@ -52,18 +52,16 @@ const machine = createMachine({
     idle: {
       on: {
         mousedown: {
-          // Don't select this transition unless
-          // there are < 5 drags
-          // ...
+          cond: context => context.drags < 5,
           actions: assignPoint,
           target: 'dragging',
         },
       },
     },
     dragging: {
-      // Whenever we enter this state, we want to
-      // increment the drags count.
-      // ...
+      entry: assign({
+        drags: context => context.drags + 1
+      }),
       on: {
         mousemove: {
           actions: assignDelta,
