@@ -40,7 +40,7 @@ const displayMachine = createMachine(
             states: {
               bright: {
                 after: {
-                  TIMEOUT: 'dim',
+                  TIMEOUT: 'mode.dark dim',
                 },
               },
               dim: {
