@@ -65,7 +65,9 @@ const dragDropMachine = createMachine({
       states: {
         normal: {
           on: {
-            'keydown.shift': 'locked',
+            'keydown.shift': {
+              target: 'locked'
+            }
           },
         },
         locked: {
